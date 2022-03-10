@@ -65,5 +65,5 @@ async function sendDataToEventbridge(latitude, longitude,res){
     }
 }
 
-app.listen(PORT, '0.0.0.0');
+app.listen(PORT);
 console.log(`Running on port ${PORT}`);
