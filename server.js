@@ -25,7 +25,7 @@ const app = express();
 app.use(express.json());
 
 app.post('/storeLocationData', (req, res) => {
-    console.log(req.body);
+    console.log(req);
     sendDataToEventbridge(req.body.latitude, req.body.longitude,res);
 });
 
