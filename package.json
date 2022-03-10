@@ -1,0 +1,25 @@
+{
+  "name": "cct-mobile-listener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plump-Panda/cct-mobile-listener.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Plump-Panda/cct-mobile-listener/issues"
+  },
+  "homepage": "https://github.com/Plump-Panda/cct-mobile-listener#readme",
+  "dependencies": {
+    "@aws-sdk/client-eventbridge": "^3.53.0",
+    "express": "^4.17.3",
+    "node-fetch": "^3.2.2"
+  }
+}
