@@ -26,11 +26,11 @@ app.use(express.json());
 
 app.post('/storeLocationData', (req, res) => {
     console.log(req);
-    sendDataToEventbridge(req.body.latitude, req.body.longitude,res);
+    sendDataToEventbridge(req.body.latitude, req.body.longitude,req.body.phone,res);
 });
 
 
-async function sendDataToEventbridge(latitude, longitude,res){
+async function sendDataToEventbridge(latitude, longitude,phoneNumber,res){
     // a client can be shared by different commands.
     const client = new EventBridgeClient({
         region: "us-east-1",
@@ -46,7 +46,8 @@ async function sendDataToEventbridge(latitude, longitude,res){
            { 
                 Detail: JSON.stringify({
                     "latitude": latitude,
-                    "longitude": longitude
+                    "longitude": longitude,
+                    "phoneNumber": phoneNumber,
                 }),
                 DetailType: 'storeMobileLocation',
                 EventBusName: 'default',
