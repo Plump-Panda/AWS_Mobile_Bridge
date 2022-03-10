@@ -6,7 +6,7 @@ import { EventBridgeClient, PutEventsCommand } from "@aws-sdk/client-eventbridge
 import fetch from 'node-fetch';
 
 // Constants
-const PORT = 80;
+const PORT = process.env.PORT;
 const REGION = "us-east-1";
 // const s3Client = new S3Client({
 //   region: REGION,
@@ -65,5 +65,8 @@ async function sendDataToEventbridge(latitude, longitude,res){
     }
 }
 
-app.listen(PORT);
+app.listen(PORT, err => {
+    if(err) throw err;
+    console.log("Server running");
+});
 console.log(`Running on port ${PORT}`);
