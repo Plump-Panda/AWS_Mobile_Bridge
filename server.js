@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 app.post('/mockLocationData', (req, res) => {
     for(let i = 0; i<10; i++){
         console.log("send mock location data")
-        sendDataToEventbridge(getRndInteger(), getRndInteger(), "+916382426327",res);
+        sendDataToEventbridge(getRndInteger(), getRndInteger(), "+16395903178",res);
         console.log(res);   
     }
 });
@@ -52,9 +52,9 @@ async function sendDataToEventbridge(latitude, longitude,phoneNumber,res){
     const client = new EventBridgeClient({
         region: "us-east-1",
         credentials: {
-            accessKeyId: 'ASIATRCE5IHPBZDATY44',
-            secretAccessKey: 'FKjw4BNGn0MaFH+eM0O5JHhhe6J6VCtbNMgWvK/Q',
-            sessionToken:'FwoGZXIvYXdzEOf//////////wEaDKHtcDKg1KpQUHArrCLAAX/aIgztrG6XJ1xRn0IcPSjeBj6umtkCxjKTnR/t2dPVkX4L2CkdEBojxDsdHxGXmBQjDMKsg2DQM42Mm70YRF/hHjkbdWANsf597u8quXc0/dX7LL+aQbeAcA2ePKvHY4N6Rc2Q7dkXatkqE5CHygkyeeSCuMh7/s9rASiRa5brkqTKWd1UGBzluwQB5GktgQMYtbjJcNgBIgMs1tPnbOGsYfbFrleOB6T5z3W8/aqj6G8JGvvcV5j66XrqOzC92SjmiaqSBjIth3/NHsHwFEZlHOE290zzEFNHdr4caTQusE/wZwFcO2U6zA5O4XZKbjWwabzu'
+            accessKeyId: 'ASIATRCE5IHPFK4L4S5G',
+            secretAccessKey: 'zEsVDn9rU4HSTsfv90vRfj50ugbx5r2vLYbp6ATQ',
+            sessionToken:'FwoGZXIvYXdzEPP//////////wEaDNrNSyeZ9aUZr4uCbSLAATYRt6r3YSDSiDc9XvgFRgvqzuHpZYppSwbzpjjuWDX6ToJESNjoEmXp1x2oaWIaQOaAGt5hMTYgyM7Rj3243Z7iEL3R8RcNVdP/YY9VCwjnIs2mlWROZ1FJ7BzY+zP5otyAru0lWG7NW4+Bzug0UxLPFXuxqhDlbWxjbULsjhDrsFcslJOVzJgyz84F3uiRuEisTqmT77nrsQScmoLgLaftDEBX1HK8gS0LoZM6nsuvY72gg7tQW2b+fD6uBX22eyjsyqySBjItik2D601CJDef3Alaiy1Me/jQMizePsTUkfH5eYlr2ROtZLopuLygNt1BO+3R'
         },
     });
 

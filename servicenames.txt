@@ -4,6 +4,8 @@ EventBridge ->
         "source": ["cct-mobile-location"]
     }
 
+    name: hotzoneMatch
+
 Lambda -> cct_mobile_location
 
 Secrets -> cct_rds 
@@ -17,3 +19,7 @@ RDS -> cct-location-db
 
 
 Lambda -> cct_hotzone_match
+
+
+
+
