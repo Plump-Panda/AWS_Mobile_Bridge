@@ -1,0 +1,25 @@
+EventBridge -> 
+    name: storeMobileLocation
+    pattern: {
+        "source": ["cct-mobile-location"]
+    }
+
+    name: hotzoneMatch
+
+Lambda -> cct_mobile_location
+
+Secrets -> cct_rds 
+    username key : cct_rds_uname (admin)
+    password : cct_rds_pword (password)
+
+RDS -> cct-location-db
+    tablename: user_mobile_location
+    username : admin
+    password : password
+
+
+Lambda -> cct_hotzone_match
+
+
+
+
