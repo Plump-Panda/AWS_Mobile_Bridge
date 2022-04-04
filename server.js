@@ -6,7 +6,7 @@ import { EventBridgeClient, PutEventsCommand } from "@aws-sdk/client-eventbridge
 import fetch from 'node-fetch';
 
 // Constants
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 const REGION = "us-east-1";
 // const s3Client = new S3Client({
 //   region: REGION,
@@ -29,15 +29,32 @@ app.post('/storeLocationData', (req, res) => {
     sendDataToEventbridge(req.body.latitude, req.body.longitude,req.body.phone,res);
 });
 
+//https://www.w3schools.com/js/tryit.asp?filename=tryjs_random_function2 
+//modified to return a float value between 50 and 53
+function getRndInteger() {
+    return (Math.random() * (50 - 53 + 1)  + 53).toString();
+}
+
+app.get('/', (req, res) => {
+    res.send("App is running fine")
+});
+
+app.post('/mockLocationData', (req, res) => {
+    for(let i = 0; i<10; i++){
+        console.log("send mock location data")
+        sendDataToEventbridge(getRndInteger(), getRndInteger(), "+916382426327",res);
+        console.log(res);   
+    }
+});
 
 async function sendDataToEventbridge(latitude, longitude,phoneNumber,res){
     // a client can be shared by different commands.
     const client = new EventBridgeClient({
         region: "us-east-1",
         credentials: {
-            accessKeyId: 'ASIAZRD3VUBCJYXKM6OO',
-            secretAccessKey: '7v+g8N/97rzh9FV/kFxyEoWTE2dkdzilvkA5LJ8C',
-            sessionToken:'FwoGZXIvYXdzEJv//////////wEaDGLGtZ05lnItb75pPCLAAd2UasF4qDBQGRCeGy293sVAyhSS00xz0O9Heuy6ywdNeIkIub+EGAxK/2o0jRNDJV7dFAgMvbiaRbggDigRIFipvwwa9RRcAHwBr2tirUo/PFgp3l6p7di6yptvxwHQpNA0dllaVOd+lLe6XcpxOsWkpIWCkej/SG+aNcekNlUIaCXEujbRUleG6BdKSoifHAws9areFNLt8VRVNZ7GQjnD7c7Z06B8qB18b1OfSgxe51HkZ2bruWp96HBY4zUgFyi/36iRBjItFtnlBJCoxn77W/nmVq5VSyD7hXghWCZs4H8XsoaLVyGG2WNHZC4ilBVV0lFG'
+            accessKeyId: 'ASIATRCE5IHPBZDATY44',
+            secretAccessKey: 'FKjw4BNGn0MaFH+eM0O5JHhhe6J6VCtbNMgWvK/Q',
+            sessionToken:'FwoGZXIvYXdzEOf//////////wEaDKHtcDKg1KpQUHArrCLAAX/aIgztrG6XJ1xRn0IcPSjeBj6umtkCxjKTnR/t2dPVkX4L2CkdEBojxDsdHxGXmBQjDMKsg2DQM42Mm70YRF/hHjkbdWANsf597u8quXc0/dX7LL+aQbeAcA2ePKvHY4N6Rc2Q7dkXatkqE5CHygkyeeSCuMh7/s9rASiRa5brkqTKWd1UGBzluwQB5GktgQMYtbjJcNgBIgMs1tPnbOGsYfbFrleOB6T5z3W8/aqj6G8JGvvcV5j66XrqOzC92SjmiaqSBjIth3/NHsHwFEZlHOE290zzEFNHdr4caTQusE/wZwFcO2U6zA5O4XZKbjWwabzu'
         },
     });
 
