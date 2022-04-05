@@ -52,9 +52,9 @@ async function sendDataToEventbridge(latitude, longitude,phoneNumber,res){
     const client = new EventBridgeClient({
         region: "us-east-1",
         credentials: {
-            accessKeyId: 'ASIATRCE5IHPH75PZOY3',
-            secretAccessKey: 'BgauXdp1Vt55Svh0PU7UMNRqt7yUS0R/84I8bmS8',
-            sessionToken:'FwoGZXIvYXdzEPz//////////wEaDJihikSFiauGPwhY8iLAAaOhn+kdnO+eECWwCyoM/WDFxbgG6vspZhbe0geksANCK32e9YbEdSSGldY47pgciiIVd1wqdzbXPBSDqtPXJih1rPIz+HWXomCHumu5JY/O1bMD/okst5uDhO9UxBQd3ocMxraQ0UHt/G5E9YCkfOB5jH57W/1iivaN8m0g1LuAjheAn/UX/RVLuPCvbjODupJohQ31lMvxK5hF2YX2ajpx7SYLAwn5QOhlFZsIiYUaU0E+0ebCsHp8BkvvhJRXtyi83K6SBjItVp9f5Ynl+E+/5lC8hFn+jnSB8lGP7AUUCcgBzYBTZul9NVQoHwQ/Ynrzvgyy'
+            accessKeyId: 'ASIATRCE5IHPEOHN5G5O',
+            secretAccessKey: 'L5k6VAjEGMNlcozUFksuprQa6sUlHpzKVvh+D2B2',
+            sessionToken:'FwoGZXIvYXdzEAEaDIqmpqYPELYmD2jQoCLAAcMU4efmPLSCIX01eT+Hhc4sAa/WvfEBCxgboLD3n+jSGqzbPqeNW1Mg3PA8//jmH1N9dVX+Hok1Y9LOzVTh3k5G3qfCBeXu18yJYOTAPeOBh4Qv9WKarDfH8nMmR6pP8piYCCvxuNaHlg33I1nMveG0n0FhyEkUtUzD0AaW7Klasgw/g0p5DpYIHR+PoxrQB+XCNpZRBfU0Twxocpl1D2uNBjaZtF/ZmXXaG/dtcMrBymsURyeIqL2cSorFNPmACyjC3K+SBjItNzRsUICA62cqvDdh/bfrI24YiqajguQ2+0Ddwb2GHb7MpkNC5p06n/c3YVpD'
         },
     });
 
