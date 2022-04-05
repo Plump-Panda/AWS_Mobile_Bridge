@@ -5,6 +5,10 @@ EventBridge ->
     }
 
     name: hotzoneMatch
+    pattern: {
+        "source": ["cct-web"],
+        "detail-type": ["hotzone"]
+    }
 
 Lambda -> cct_mobile_location
 
@@ -20,6 +24,9 @@ RDS -> cct-location-db
 
 Lambda -> cct_hotzone_match
 
-
+Every session
+1. cct_web_frontend repo
+2. cct_mobile_bridge
+3. android post request ip address
 
 
