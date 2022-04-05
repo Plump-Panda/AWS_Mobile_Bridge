@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 app.post('/mockLocationData', (req, res) => {
     for(let i = 0; i<10; i++){
         console.log("send mock location data")
-        sendDataToEventbridge(getRndInteger(), getRndInteger(), "+16395903178",res);
+        sendDataToEventbridge(getRndInteger(), getRndInteger(), "+9198",res);
         console.log(res);   
     }
 });
